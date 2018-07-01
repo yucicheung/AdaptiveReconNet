@@ -1,0 +1,9 @@
+scale = 1
+for "test" part:
+symmetric padding before processing 
+crop after processing
+
+
+shuffle
+no feature loss
+MR=  0.1
