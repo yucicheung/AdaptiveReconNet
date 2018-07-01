@@ -1,4 +1,6 @@
 vgg16.py
+*.h5
+*.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

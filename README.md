@@ -5,14 +5,20 @@ Implementation of **Adaptive ReconNet** in Tensorflow, which was proposed in pap
 The *Adaptive ReconNet* was originated from the *ReconNet* presented in [*ReconNet:Non-Iterative Reconstruction of Images from Compressively Sensed Random Measurements*](https://arxiv.org/abs/1601.06892), the structure of which is shown below.
 
 ![reconNet](intro_pics/reconnet.gif)
+
 1. The structure of *ReconNet*
 
 The main improvement that the *Adaptive ReconNet* makes is that it adds a fully-connected layer to replace the **random Gaussian measurement** part, so that the network should be able to get the measurement matrix all by itself during training. Its corresponding network is shown below.
 
 ![adaptiveRenconNet](intro_pics/adaptiveReconNet.gif)
 
+2. The structure of **Adaptive ReconNet**
+
 The results have been improved dramatically.
+
 ![improvedResults](intro_pics/resultsCompare.gif)
+
+3. Improved results
 
 ## Prerequisites 
 I worte and tested the code under Linux environment. If you want to run it on Windows, you should modify the code to make it executable.
@@ -24,8 +30,11 @@ I worte and tested the code under Linux environment. If you want to run it on Wi
 
 ## Sample Results
 - Source pic
+
   ![original pic](Test/Set5/baby_GT.bmp)
+
 - Reconstructed pic
+
   ![reconstructed pic](sample/test.png)
 
 
