@@ -1,3 +1,4 @@
+.idea/*
 vgg16.py
 *.h5
 *.xml

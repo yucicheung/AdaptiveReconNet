@@ -33,7 +33,7 @@ I worte and tested the code under Linux environment. If you want to run it on Wi
 
   ![original pic](Test/Set5/baby_GT.bmp)
 
-- Reconstructed pic
+- Reconstructed pic (MR=10%)
 
   ![reconstructed pic](sample/test.png)
 
@@ -43,7 +43,7 @@ I worte and tested the code under Linux environment. If you want to run it on Wi
 
 ## Usage
 ### To reproduce the sample
-- Simple run the `main.py`, and you should get the sample results shown above.
+- Simply run the `main.py`, and you should get the sample results shown above.
 
 ### To test on other pics
 - Modify the following part of code (line 71-72) inside funciton `prepare_data` defined in file `utils.py` to choose different test set.
@@ -62,7 +62,7 @@ input_init, label_init = preprocess(data[2], config.scale) # decide which pic to
 - Modify the `flags` part defined in file `main.py` as below.
   - Change the "stride" entry  from 33 to 14 .
   - Change the "is_train" entry from False to True.
-  - Modify the "epoch" and "batch_size" if you need.
+  - Modify the "epoch","batch_size" and "measurement_rate" if you need.
 
 - Run the `main.py` to start training.
 

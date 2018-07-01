@@ -10,6 +10,7 @@ import os
 
 import numpy as np
 import tensorflow as tf
+from math import ceil
 
 class RECONNET(object):
 
@@ -18,7 +19,8 @@ class RECONNET(object):
                image_size=33,
                label_size=33,
                batch_size=128,
-               c_dim=1, 
+               c_dim=1,
+               measurement_rate=1e-1,
                checkpoint_dir=None, 
                sample_dir=None):
 
@@ -27,7 +29,7 @@ class RECONNET(object):
     self.image_size = image_size
     self.label_size = label_size
     self.batch_size = batch_size
-
+    self.measurement_rate = measurement_rate
     self.c_dim = c_dim
 
     self.checkpoint_dir = checkpoint_dir
@@ -35,13 +37,14 @@ class RECONNET(object):
     self.build_model()
 
   def build_model(self):
+    self.fc_size=int(ceil(self.measurement_rate*1089))
     self.images = tf.placeholder(tf.float32, [None, self.image_size,self.image_size,  self.c_dim], name='images')
     self.labels = tf.placeholder(tf.float32, [None, self.label_size, self.label_size, self.c_dim], name='labels')
 
 
     self.weights = {
-      'fc1w': tf.Variable(tf.random_normal([1089,109], stddev=1e-2), name='fc1w'),
-      'fc2w': tf.Variable(tf.random_normal([109,1089], stddev=1e-2), name='fc2w'),
+      'fc1w': tf.Variable(tf.random_normal([1089,self.fc_size], stddev=1e-2), name='fc1w'),
+      'fc2w': tf.Variable(tf.random_normal([self.fc_size,1089], stddev=1e-2), name='fc2w'),
       'w1': tf.Variable(tf.random_normal([11, 11, 1, 64], stddev=1e-1), name='w1'),
       'w2': tf.Variable(tf.random_normal([1, 1, 64, 32], stddev=1e-1), name='w2'),
       'w3': tf.Variable(tf.random_normal([7, 7, 32, 1], stddev=1e-1), name='w3'),
