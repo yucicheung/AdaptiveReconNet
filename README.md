@@ -43,6 +43,7 @@ I worte and tested the code under Linux environment. If you want to run it on Wi
 
 ## Usage
 ### To reproduce the sample
+- Run `generate_test.m`/ `generate_train.m` in folder **generate_h5** to get yourself the `test.h5`/`train.h5`  dataset.
 - Simply run the `main.py`, and you should get the sample results shown above.
 
 ### To test on other pics
